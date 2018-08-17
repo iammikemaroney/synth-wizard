@@ -1,15 +1,19 @@
-html {
-  font-size: 10px;
-  background: #193944 url(synth.png);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center top; 
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 6rem;
+  color: rgb(123, 246, 255);
+  text-shadow: .3rem .3rem .2rem #333333;
+  margin: 0 auto;
 }
 
-body,html {
-  margin: 0;
+.piano {
   padding: 0;
-  font-family: 'helvetica neue';
+  background-image: url("bg.png");
+  background-repeat: repeat;
+  border: .4rem solid black;
+  border-radius: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .keys {
@@ -21,34 +25,26 @@ body,html {
 }
 
 .key {
-  border: .4rem solid black;
   border-radius: .5rem;
-  margin: 1rem;
-  font-size: 1.5rem;
-  padding: 1rem .5rem;
+  margin: .15rem;
+  margin-bottom: 5rem;
+  padding: 10rem .25rem;
   transition: all .1s ease;
-  width: 10rem;
+  width: 6rem;
   text-align: center;
-  color: white;
-  background: rgba(0,0,0,0.2);
-  text-shadow: 0 0 .5rem black;
+  color: black;
+  background: white;
 }
 
 .playing {
   transform: scale(1.1);
-  border-color: #b3231b;
-  box-shadow: 0 0 1rem #b3231b;
-}
-
-kbd {
-  display: block;
-  font-size: 4rem;
+  border-color: #FFFF33;
+  box-shadow: 0 0 1rem #FFFF33;
 }
 
 .sound {
-  font-size: 1.2rem;
-  font-style: italic; 
+  font-size: 2rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-transform: uppercase;
-  letter-spacing: .1rem;
-  color: #ffc600;
+  color: #444444;
 }

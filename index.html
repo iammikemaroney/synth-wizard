@@ -4,13 +4,53 @@
   <meta charset="UTF-8">
   <title>synth wizard</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
-  <div class="piano">
-    <center><h1>Synth Wizard</h1></center>
+<div class="piano">
+  <div class="container">
+    <h1>Synth Wizard</h1>
+
+    <div class="buttons">
+      <img src="img/button-red.png">
+      <a href="index2.html"><img src="img/button-white.png"></a>
+      <a href="index3.html"><img src="img/button-white.png"></a>
+
+      <div class="space4">
+      </div>
+
+    <div class="knobs">
+      <img src="img/knob3.png">
+      <img src="img/knob8.png">
+      <img src="img/knob1.png">
+    </div>
+    </div>
+
+    <div class="keys">
+      <div class="space2">
+      </div>
+      <div data-key="87" class="blackkey">
+        <span class="sound">W</span>
+      </div>
+      <div data-key="69" class="blackkey">
+        <span class="sound">E</span>
+      </div>
+      <div class="space">
+      </div>
+      <div data-key="84" class="blackkey">
+        <span class="sound">T</span>
+      </div>
+      <div data-key="89" class="blackkey">
+        <span class="sound">Y</span>
+      </div>
+      <div data-key="85" class="blackkey">
+        <span class="sound">U</span>
+      </div>
+      <div class="space3">
+      </div>
+    </div>
+
     <div class="keys">
       <div data-key="65" class="key">
         <span class="sound">A</span>
@@ -49,6 +89,12 @@
   <audio data-key="74" src="sounds/B.wav"></audio>
   <audio data-key="75" src="sounds/C3.wav"></audio>
 
+  <audio data-key="87" src="sounds/C-.wav"></audio>
+  <audio data-key="69" src="sounds/D-.wav"></audio>
+  <audio data-key="84" src="sounds/F-.wav"></audio>
+  <audio data-key="89" src="sounds/G-.wav"></audio>
+  <audio data-key="85" src="sounds/A-.wav"></audio>
+
 <script>
   function removeTransition(e) {
     if (e.propertyName !== 'transform') return;
@@ -67,6 +113,7 @@
 
   const keys = Array.from(document.querySelectorAll('.key'));
   keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
   window.addEventListener('keydown', playSound);
 </script>
 

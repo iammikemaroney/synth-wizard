@@ -1,39 +1,91 @@
+body {
+  background-color: black;
+}
+
 h1 {
-  font-family: 'Pacifico', cursive;
-  font-size: 6rem;
-  color: rgb(123, 246, 255);
-  text-shadow: .3rem .3rem .2rem #333333;
+  font-family: 'Fugaz One', sans-serif;
+  font-size: 5rem;
+  color: rgb(221, 255, 235);
+  text-shadow: .3rem .3rem .2rem rgb(36, 23, 8);
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.container {
+  width: 960px;
   margin: 0 auto;
 }
 
 .piano {
   padding: 0;
-  background-image: url("bg.png");
+  background-image: url("woodbg.jpg");
   background-repeat: repeat;
-  border: .4rem solid black;
-  border-radius: 1rem;
+  border: 6px solid rgb(36, 23, 8);
+  border-radius: 20px;
   align-items: center;
   justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  flex: 1;
+  margin-left: 44px;
+}
+
+.knobs {
+  align-content: flex-end;
+  margin-right: 44px;
 }
 
 .keys {
   display: flex;
   flex: 1;
-  min-height: 100vh;
-  align-items: center;
   justify-content: center;
 }
 
 .key {
-  border-radius: .5rem;
+  border-radius: 10px;
   margin: .15rem;
-  margin-bottom: 5rem;
-  padding: 10rem .25rem;
+  margin-bottom: 2rem;
+  padding: 7rem .25rem;
   transition: all .1s ease;
   width: 6rem;
   text-align: center;
   color: black;
   background: white;
+}
+
+.blackkeys {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.space {
+  width: 8rem;
+}
+
+.space2 {
+  width: 3.5rem;
+}
+
+.space3 {
+  width: 10rem;
+}
+
+.space4 {
+  width: 24rem;
+}
+
+.blackkey {
+  border-radius: 10px;
+  margin: .15rem;
+  padding: 3rem .25rem;
+  transition: all .1s ease;
+  width: 6rem;
+  text-align: center;
+  background: black;
 }
 
 .playing {
@@ -43,8 +95,8 @@ h1 {
 }
 
 .sound {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   text-transform: uppercase;
-  color: #444444;
+  color: #666666;
 }

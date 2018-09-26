@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>synth wizard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Fugaz+One" rel="stylesheet">
+</head>
+<body>
+
+<div class="piano">
+  <div class="container">
+    <h1>Synth Wizard</h1>
+
+    <div class="buttons">
+      <a href="index.html"><img src="img/button-white.png"></a>
+      <a href="index2.html"><img src="img/button-white.png"></a>
+      <img src="img/button-green.png">
+
+      <div class="space4">
+      </div>
+
+    <div class="knobs">
+      <img src="img/knob1.png">
+      <img src="img/knob2.png">
+      <img src="img/knob7.png">
+    </div>
+    </div>
+
+    <div class="keys">
+      <div class="space2">
+      </div>
+      <div data-key="87" class="blackkey">
+        <span class="sound">W</span>
+      </div>
+      <div data-key="69" class="blackkey">
+        <span class="sound">E</span>
+      </div>
+      <div class="space">
+      </div>
+      <div data-key="84" class="blackkey">
+        <span class="sound">T</span>
+      </div>
+      <div data-key="89" class="blackkey">
+        <span class="sound">Y</span>
+      </div>
+      <div data-key="85" class="blackkey">
+        <span class="sound">U</span>
+      </div>
+      <div class="space3">
+      </div>
+    </div>
+
+    <div class="keys">
+      <div data-key="65" class="key">
+        <span class="sound">A</span>
+      </div>
+      <div data-key="83" class="key">
+        <span class="sound">S</span>
+      </div>
+      <div data-key="68" class="key">
+        <span class="sound">D</span>
+      </div>
+      <div data-key="70" class="key">
+        <span class="sound">F</span>
+      </div>
+      <div data-key="71" class="key">
+        <span class="sound">G</span>
+      </div>
+      <div data-key="72" class="key">
+        <span class="sound">H</span>
+      </div>
+      <div data-key="74" class="key">
+        <span class="sound">J</span>
+      </div>
+      <div data-key="75" class="key">
+        <span class="sound">K</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <audio data-key="65" src="sounds/C.wav"></audio>
+  <audio data-key="83" src="sounds/D.wav"></audio>
+  <audio data-key="68" src="sounds/E.wav"></audio>
+  <audio data-key="70" src="sounds/F.wav"></audio>
+  <audio data-key="71" src="sounds/G.wav"></audio>
+  <audio data-key="72" src="sounds/A.wav"></audio>
+  <audio data-key="74" src="sounds/B.wav"></audio>
+  <audio data-key="75" src="sounds/C3.wav"></audio>
+
+  <audio data-key="87" src="sounds/C-.wav"></audio>
+  <audio data-key="69" src="sounds/D-.wav"></audio>
+  <audio data-key="84" src="sounds/F-.wav"></audio>
+  <audio data-key="89" src="sounds/G-.wav"></audio>
+  <audio data-key="85" src="sounds/A-.wav"></audio>
+
+<script>
+  function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  }
+
+  function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if (!audio) return;
+
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+  }
+
+  const keys = Array.from(document.querySelectorAll('.key'));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+  window.addEventListener('keydown', playSound);
+</script>
+
+</body>
+</html>

@@ -29,7 +29,7 @@ h1 {
 
 .buttons {
   display: flex;
-  /* flex: 1; */
+  flex: 1;
   margin-left: 44px;
 }
 
@@ -89,7 +89,7 @@ h1 {
 }
 
 .playing {
-  transform: scale(1.1);
+  transform: scale(1.0);
   border-color: #FFFF33;
   box-shadow: 0 0 1rem #FFFF33;
 }

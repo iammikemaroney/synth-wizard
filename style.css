@@ -29,7 +29,7 @@ h1 {
 
 .buttons {
   display: flex;
-  flex: 1;
+  /* flex: 1; */
   margin-left: 44px;
 }
 
